@@ -1,0 +1,15 @@
+copy public.competitions (competition_id, name, url) FROM '/Library/PostgreSQL/15/Tables/competitions.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
+copy public.appearances (appearance_id,competition_id,yellow_cards,red_cards,goals,assists,minutes_played,player_id) FROM '/Library/PostgreSQL/15/Tables/appearances.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
+copy public.clubs (club_id,domestic_competition_id,squad_size,average_age,foreigners_number,foreigners_percentage,national_team_players,stadium_seats,stadium_name,last_season) FROM '/Library/PostgreSQL/15/Tables/clubs.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
+copy public.clubs_code (club_id,club_code) FROM '/Library/PostgreSQL/15/Tables/clubs_code.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
+copy public.games (game_id,competition_id,season,round, date,aggregate,competition_type) FROM '/Library/PostgreSQL/15/Tables/games.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
+copy public.games_away_club (away_club_id,away_club_position,away_club_goals,away_club_manager_name,away_club_name,game_id) FROM '/Library/PostgreSQL/15/Tables/games_away_club.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
+copy public.games_home_club (home_club_id,home_club_position,home_club_goals,home_club_manager_name,home_club_name,game_id) FROM '/Library/PostgreSQL/15/Tables/games_home_club.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
+copy public.competitions_country (competition_id,country_name) FROM '/Library/PostgreSQL/15/Tables/competitions_country.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
+copy public.competitions_domestic_league (competition_id,domestic_league_code) FROM '/Library/PostgreSQL/15/Tables/competitions_domestic_league.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
+copy public.competitions_type (competition_id,type) FROM '/Library/PostgreSQL/15/Tables/competitions_type.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
+copy public.competition_current_club (player_id,current_club_name,current_club_domestic_competition_id) FROM '/Library/PostgreSQL/15/Tables/competition_current_club.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
+copy public.players (player_id,first_name,last_name,last_season,country_of_citizenship,foot,height_in_cm,market_value_in_eur,highest_market_value_in_eur,agent_name,image_url) FROM '/Library/PostgreSQL/15/Tables/players.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
+copy public.player_birth (player_id,city_of_birth) FROM '/Library/PostgreSQL/15/Tables/player_birth.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
+copy public.player_code (player_id,player_code) FROM '/Library/PostgreSQL/15/Tables/player_code.csv' DELIMITER ',' CSV HEADER ENCODING'UTF8' ESCAPE '''';
+copy public.player_position (player_id,position,sub_position) FROM '/Library/PostgreSQL/15/Tables/player_position.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' ESCAPE '''';
